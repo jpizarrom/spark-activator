@@ -9,6 +9,7 @@ object Version {
   val scalaTest = "2.2.5"
   val slf4j     = "1.7.6"
   val spark     = "1.5.2"
+  val spray     = "1.3.3"
 }
 
 object Library {
@@ -20,6 +21,8 @@ object Library {
   val scalaTest      = "org.scalatest"     %% "scalatest"       % Version.scalaTest
   val slf4jApi       = "org.slf4j"         %  "slf4j-api"       % Version.slf4j
   val sparkStreaming = "org.apache.spark"  %% "spark-streaming" % Version.spark
+  val sprayCan       = "io.spray"          %% "spray-can"       % Version.spray
+  val sprayRouting   = "io.spray"          %% "spray-routing"   % Version.spray
 }
 
 object Dependencies {
@@ -29,6 +32,8 @@ object Dependencies {
   val sparkAkkaHadoop = Seq(
     sparkStreaming,
     akkaActor,
+    sprayCan,
+    sprayRouting,
     akkaTestKit,
     hadoopClient,
     logbackClassic % "test",

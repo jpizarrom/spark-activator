@@ -21,3 +21,16 @@ Watch out for the following message in the logs (the `Time` line may show a diff
     Hello from Spark Streaming with Scala and Akka
 
 Please note that the `clean` task is important after the first run as some files get serialized and then deserialized that have often caused deserialization problems. As a workaround, running `clean` gets rid of the potential issue quickly and easily.
+
+# run app
+```
+./activator "runMain StartSpark"
+./activator "runMain StreamingApp"
+```
+
+# impression data
+
+`curl "http://localhost:8000/api/impression?id_impression=1&country=1&campaign=1&advertiser=1&publisher=1"`
+
+# click data
+`watch curl "http://localhost:8000/api/click?id_impression=1\&click=1"`
